@@ -1,14 +1,14 @@
 # Benchmark of performance (Dlang edition)
 
-### Try to compare performance of D code with others based on some problems from benchmarkgames
+### Try to compare the performance of D code with others based on problems from benchmarkgames
 
-Initially the idea comes from one popular bencmark repository, which compares different implementations on several languages for some well-known problems: https://benchmarksgame-team.pages.debian.net/benchmarksgame/index.html
+Initially the idea comes from one popular benchmark repository, which compares different implementations on several languages for some well-known problems: https://benchmarksgame-team.pages.debian.net/benchmarksgame/index.html
 
-Howerver maintainer of the repository decides to support only small set of popular languages in his environment.
+However maintainer of the repository decides to support in his environment only a small set of popular languages .
 
 After that another similar web-site was published: https://programming-language-benchmarks.vercel.app/
 
-It has almost the same problems, but used a different implementations and much bigger number of languages is supported, including **zig**, **crystal**, **nim**, **d**, **v** (and many others).
+It has almost the same problems, but with much larger number of supported languages, including **zig**, **crystal**, **nim**, **d**, **v** (and many others).
 
 This repository tries to find how **Dlang** is performing on such problems.
 
@@ -26,13 +26,13 @@ This repository tries to find how **Dlang** is performing on such problems.
   * https://programming-language-benchmarks.vercel.app/problem/edigits
   * D implementation v1 based on Crystal
 
-
+## Additional info
 
 ### Why Crystal?
 
-On site of benchmark it uses quite simple implementation without any "hacks" with memory-allocations and multithreading/multiprocessing and shows a good results.
+Crystal uses quite simple implementation without any "hacks" with memory-allocations and multi-threading/multi-processing and shows a good result.
 
-### Compliing flags and options
+### Compiling flags and options
 
 For Crystal compilation used:
 
