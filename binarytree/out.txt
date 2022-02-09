@@ -1,21 +1,31 @@
-Benchmark #1: java source/j_code.java 16
-  Time (mean ± σ):      1.061 s ±  0.148 s    [User: 2.103 s, System: 0.169 s]
-  Range (min … max):    0.776 s …  1.211 s    10 runs
+Benchmark 1: ./binarytrees 15
+  Time (mean ± σ):      19.3 ms ±   2.3 ms    [User: 110.0 ms, System: 5.3 ms]
+  Range (min … max):    13.8 ms …  24.3 ms    121 runs
  
-Benchmark #2: bin/crystal 16
-  Time (mean ± σ):     378.3 ms ±  13.0 ms    [User: 613.9 ms, System: 76.7 ms]
-  Range (min … max):   358.2 ms … 398.8 ms    10 runs
+Benchmark 2: ./cr_code 15
+  Time (mean ± σ):     239.0 ms ±  24.1 ms    [User: 356.0 ms, System: 54.5 ms]
+  Range (min … max):   206.6 ms … 269.5 ms    10 runs
  
-Benchmark #3: bin/dmd_dlang 16
-  Time (mean ± σ):     855.9 ms ±  10.1 ms    [User: 917.0 ms, System: 24.3 ms]
-  Range (min … max):   836.0 ms … 871.5 ms    10 runs
+Benchmark 3: ./d_code1 15
+  Time (mean ± σ):     564.3 ms ±  38.8 ms    [User: 590.9 ms, System: 12.4 ms]
+  Range (min … max):   458.6 ms … 591.2 ms    10 runs
  
-Benchmark #4: python source/py_code.py 16
-  Time (mean ± σ):     736.5 ms ±  15.2 ms    [User: 4.144 s, System: 0.115 s]
-  Range (min … max):   713.3 ms … 760.7 ms    10 runs
+Benchmark 4: ./d_code2 15
+  Time (mean ± σ):      42.6 ms ±   5.5 ms    [User: 144.8 ms, System: 6.7 ms]
+  Range (min … max):    25.8 ms …  50.1 ms    57 runs
+ 
+Benchmark 5: python ./py_code.py 15
+  Time (mean ± σ):     369.4 ms ±  29.6 ms    [User: 1852.2 ms, System: 73.3 ms]
+  Range (min … max):   334.0 ms … 430.6 ms    10 runs
+ 
+Benchmark 6: java -jar ./j_code.jar 15
+  Time (mean ± σ):     228.1 ms ±  17.6 ms    [User: 282.4 ms, System: 52.0 ms]
+  Range (min … max):   190.4 ms … 249.4 ms    13 runs
  
 Summary
-  'bin/crystal 16' ran
-    1.95 ± 0.08 times faster than 'python source/py_code.py 16'
-    2.26 ± 0.08 times faster than 'bin/dmd_dlang 16'
-    2.80 ± 0.40 times faster than 'java source/j_code.java 16'
+  './binarytrees 15' ran
+    2.21 ± 0.39 times faster than './d_code2 15'
+   11.83 ± 1.71 times faster than 'java -jar ./j_code.jar 15'
+   12.40 ± 1.96 times faster than './cr_code 15'
+   19.17 ± 2.79 times faster than 'python ./py_code.py 15'
+   29.28 ± 4.09 times faster than './d_code1 15'

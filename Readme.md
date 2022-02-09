@@ -25,6 +25,11 @@ This repository tries to find how **Dlang** is performing on such problems.
 
   * https://programming-language-benchmarks.vercel.app/problem/edigits
   * D implementation v1 based on Crystal
+  
+* ### LRU problem
+
+  * https://programming-language-benchmarks.vercel.app/problem/edigits
+  * D implementation v1 based on Crystal
 
 ## Additional info
 
