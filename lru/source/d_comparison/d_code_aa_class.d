@@ -128,10 +128,12 @@ class LRU(KT, VT)
     {
         auto ptr = key in _dict;
         if (ptr == null)
+        {
             if (_dict.length == _size)
                 _dict.remove(_dict.first_key());
-            else
-                _dict.remove(key);
+        }
+        else
+            _dict.remove(key);
         _dict[key] = value;
     }
 }
@@ -181,6 +183,6 @@ void main(string[] argv)
         else
             hit++;
     }
-    writeln(hit);
-    writeln(missed);
+    printf("%d\n",hit);
+    printf("%d\n",missed);
 }
