@@ -1,0 +1,15 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/memutils
+memutils.so
+memutils.dylib
+memutils.dll
+memutils.a
+memutils.lib
+memutils-test-*
+*.exe
+*.o
+*.obj
+*.lst

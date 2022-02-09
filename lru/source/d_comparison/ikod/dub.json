@@ -1,0 +1,13 @@
+{
+	"authors": [
+		"Serg"
+	],
+	"copyright": "Copyright © 2022, Serg",
+	"dependencies": {
+		"ikod-containers": "~>0.0.22"
+	},
+	"description": "LRU in D with ikod-container",
+	"license": "MIT",
+"	targetType": "executable",
+	"name": "ikod"
+}

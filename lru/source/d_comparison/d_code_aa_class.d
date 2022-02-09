@@ -1,4 +1,5 @@
 import std;
+import core.memory;
 
 immutable ulong A = 1_103_515_245L;
 immutable ulong C = 12_345L;
@@ -173,6 +174,7 @@ void main(string[] argv)
     auto lru = new LRU!(ulong, ulong)(10);
 
     ulong n0, n1;
+    GC.disable();
     foreach (i; 0 .. n)
     {
         n0 = rnd0.next % 100;

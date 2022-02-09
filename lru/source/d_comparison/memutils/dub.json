@@ -1,0 +1,12 @@
+{
+	"authors": [
+		"Serg"
+	],
+	"copyright": "Copyright © 2022, Serg",
+	"dependencies": {
+		"memutils": "~>1.0.4"
+	},
+	"description": "LRU in D with memutils Hash",
+	"license": "MIT",
+	"name": "memutils"
+}

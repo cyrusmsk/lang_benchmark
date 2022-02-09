@@ -1,0 +1,15 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/ikod
+ikod.so
+ikod.dylib
+ikod.dll
+ikod.a
+ikod.lib
+ikod-test-*
+*.exe
+*.o
+*.obj
+*.lst

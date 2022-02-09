@@ -1,4 +1,5 @@
 import std;
+import core.memory;
 
 alias nullableUlong = Nullable!ulong;
 
@@ -87,6 +88,8 @@ void main(string[] argv)
     auto rnd0 = CPP11LCG(0);
     auto rnd1 = CPP11LCG(1);
     auto lru = new LRU!(ulong, nullableUlong)(10);
+
+    GC.disable();
 
     foreach (i; 0 .. n)
     {
