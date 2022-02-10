@@ -1,5 +1,6 @@
 import std;
-import ikod.containers.hashmap;
+import memutils.hashmap: mem_HashMap = HashMap;
+import memutils.allocators;
 
 immutable ulong A = 1_103_515_245L;
 immutable ulong C = 12_345L;
@@ -7,60 +8,64 @@ immutable ulong M = cast(ulong) 1 << 31;
 
 struct OrderedHash(K, V)
 {
-	void opIndexAssign(V value, K key)
+	void opIndexAssign(V in_value, K key)
 	{
 		if (m_data.length > 0)
 		{
-			auto ptr = m_data.fetch(key);
-			if (!ptr.ok)
+			auto ptr = key in m_data;
+			if (ptr == null)
 			{
-				// (m_last in m_data).next = key;
-				m_data.fetch(m_last).value.next = key;
-				m_data[key] = Payload(value, m_last);
+				(m_last in m_data).next = key;
+				m_data[key] = Payload(in_value, m_last);
 				m_last = key;
 			}
 			else
 			{
-				ptr.value = value;
+				ptr.valueP = in_value;
 			}
 		}
 		else
 		{
-			m_data[key] = Payload(value, key, key);
+			m_data[key] = Payload(in_value, key, key);
 			m_first = m_last = key;
 		}
 	}
 
-	ref V opIndex(const K key)
+	V opIndex(const K key)
 	{
-		return m_data[key].value;
+		return m_data[key].valueP;
 	}
 
 	V* opBinaryRight(string op : "in")(K key)
 	{
-		auto ptr = m_data.fetch(key);
-		if (!ptr.ok)
-			return null;
-		return ptr.value;
+		// auto ptr = m_data.fetch(key);
+		// if (!ptr.ok)
+		// 	return null;
+		// return ptr.value.valueP;
+		auto ptr = key in m_data;
+        if (ptr == null)
+            return null;
+        return &ptr.valueP;
 	}
 
 	void remove(K key)
 	{
-		auto ptr = m_data.fetch(key);
-		if (ptr.ok)
+		// auto ptr = m_data.fetch(key);
+		auto ptr = key in m_data;
+		if (ptr != null)
 		{
 			if (m_data.length > 1)
 			{
 				if (key == m_first)
-					m_first = ptr.value.next;
+					m_first = ptr.next;
 				else if (key == m_last)
-					m_last = ptr.value.prev;
+					m_last = ptr.prev;
 				else
 				{
-					// (ptr.prev in m_data).next = ptr.next;
-					m_data.fetch(ptr.value.prev).value.next = ptr.value.next;
-					// (ptr.next in m_data).prev = ptr.prev;
-					m_data.fetch(ptr.value.next).value.prev = ptr.value.prev;
+					(ptr.prev in m_data).next = ptr.next;
+					// m_data.fetch(ptr.value.prev).value.next = ptr.value.next;
+					(ptr.next in m_data).prev = ptr.prev;
+					// m_data.fetch(ptr.value.next).value.prev = ptr.value.prev;
 				}
 			}
 			m_data.remove(key);
@@ -87,7 +92,7 @@ struct OrderedHash(K, V)
 			K k = m_first;
 			while (true)
 			{
-				result = dg(k, m_data[k].value);
+				result = dg(k, m_data[k].valueP);
 				if (result || k == m_last)
 					break;
 				k = m_data[k].next;
@@ -99,16 +104,16 @@ struct OrderedHash(K, V)
 private:
 	struct Payload
 	{
-		V value;
+		V valueP;
 		K prev, next;
 	}
 
-	HashMap!(K, V) m_data;
+	mem_HashMap!(K, Payload) m_data;
 
 	K m_first, m_last;
 }
 
-class LRU(KT, VT)
+struct LRU(KT, VT)
 {
 	private int _size;
 	private OrderedHash!(VT, KT) _dict;
