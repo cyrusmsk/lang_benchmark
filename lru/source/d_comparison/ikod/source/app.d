@@ -169,16 +169,22 @@ class LCG(VT)
 
 void main(string[] argv)
 {
-	int n;
-	if (argv.length == 0)
-		n = 100;
+	int n, k;
+	if (argv.length == 1)
+    {
+		n = 1000;
+        k = 10;
+    }
 	else
+    {
 		n = to!int(argv[1]);
+        k = to!int(argv[2]);
+    }
 	int hit, missed;
 
 	auto rnd0 = new LCG!ulong(0);
 	auto rnd1 = new LCG!ulong(1);
-	auto lru = new LRU!(ulong, ulong)(10);
+	auto lru = new LRU!(ulong, ulong)(k);
 
 	ulong n0, n1;
 	foreach (i; 0 .. n)

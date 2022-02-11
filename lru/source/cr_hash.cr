@@ -46,12 +46,13 @@ class LRU
   end
 end
 
-n = ARGV.size > 0 ? ARGV[0].to_i : 100
+n = ARGV.size > 0 ? ARGV[0].to_i : 1000
+k = ARGV.size > 1 ? ARGV[1].to_i : 10
 hit = 0
 missed = 0
 rng0 = LCG.new 0
 rng1 = LCG.new 1
-lru = LRU.new 10
+lru = LRU.new k
 (0...n).each do |i|
   n0 = rng0.next % 100
   lru.put(n0, n0)

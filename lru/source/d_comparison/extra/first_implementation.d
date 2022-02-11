@@ -7,7 +7,7 @@ static immutable ulong A = 1_103_515_245L;
 static immutable ulong C = 12_345L;
 static immutable ulong M = cast(ulong) 1 << 31;
 
-class LRU(KT, VT)
+struct LRU(KT, VT)
 {
     private int _size;
     private VT[KT] _dict;
@@ -26,7 +26,7 @@ class LRU(KT, VT)
         a.nullify();
         if (val == null)
             return a;
-        auto index = _order.countUntil(key);          
+        auto index = _order.countUntil(key);
         _order = _order.remove(index);
         _order ~= key;
         return _dict[key];
@@ -41,7 +41,7 @@ class LRU(KT, VT)
             {
                 _dict.remove(_order.front());
                 _order.popFront();
-                
+
             }
         }
         else
@@ -54,7 +54,7 @@ class LRU(KT, VT)
     }
 }
 
-class LCG(VT)
+struct LCG(VT)
 {
     private VT _seed;
 
@@ -77,17 +77,25 @@ class LCG(VT)
 
 void main(string[] argv)
 {
-    long n;
+    int n, k;
     if (argv.length == 0)
+    {
         n = 100;
+        k = 10;
+    }
+
     else
-        n = to!long(argv[1]);
+    {
+        n = to!int(argv[1]);
+        k = to!int(argv[2]);
+    }
+
     int hit, missed;
 
     alias CPP11LCG = LinearCongruentialEngine!(ulong, A, C, M);
     auto rnd0 = CPP11LCG(0);
     auto rnd1 = CPP11LCG(1);
-    auto lru = new LRU!(ulong, nullableUlong)(10);
+    auto lru = new LRU!(ulong, nullableUlong)(k);
 
     GC.disable();
 
