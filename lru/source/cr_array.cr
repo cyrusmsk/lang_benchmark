@@ -46,10 +46,11 @@ missed = 0
 rng0 = LCG.new 0
 rng1 = LCG.new 1
 lru = LRU.new k
+l = 10*k
 n.times do
-  n0 = rng0.next % 100
+  n0 = rng0.next % l
   lru.put(n0, n0)
-  n1 = rng1.next % 100
+  n1 = rng1.next % l
   if lru.get(n1)
     hit += 1
   else

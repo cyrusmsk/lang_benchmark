@@ -38,10 +38,11 @@ def main():
     hit = 0
     missed = 0
     lru = LRU(k)
+    l = 10*k
     for i in range(0, n):
-        n0 = next(rng0) % 100
+        n0 = next(rng0) % l
         lru.put(n0, n0)
-        n1 = next(rng1) % 100
+        n1 = next(rng1) % l
         if lru.get(n1) == None:
             missed += 1
         else:

@@ -112,7 +112,7 @@ private:
 	K m_first, m_last;
 }
 
-struct LRU(KT, VT)
+class LRU(KT, VT)
 {
 	private int _size;
 	private OrderedHash!(VT, KT) _dict;
@@ -146,7 +146,7 @@ struct LRU(KT, VT)
 	}
 }
 
-struct LCG(VT)
+class LCG(VT)
 {
 	private VT _seed;
 
@@ -169,7 +169,7 @@ struct LCG(VT)
 
 void main(string[] argv)
 {
-	int n, k, l;
+	int n, k;
 	if (argv.length == 1)
     {
 		n = 1000;
@@ -186,13 +186,12 @@ void main(string[] argv)
 	auto rnd1 = new LCG!ulong(1);
 	auto lru = new LRU!(ulong, ulong)(k);
 
-	l = 10*k;
 	ulong n0, n1;
 	foreach (i; 0 .. n)
 	{
-		n0 = rnd0.next % l;
+		n0 = rnd0.next % 100;
 		lru.put(n0, n0);
-		n1 = rnd1.next % l;
+		n1 = rnd1.next % 100;
 		if (!lru.get(n1)[0])
 			missed++;
 		else

@@ -21,9 +21,8 @@ struct LRU(KT, VT)
             if (a[i][0] == key)
             {
                 auto tmp = a[i];
-                foreach (j; i + 1 .. a.length)
-                    a[j - 1] = a[j];
-                a.back = tmp;
+                a = a.remove(i);
+                a ~= tmp;
                 return tuple(true, a.back[1]);
             }
         }
@@ -36,9 +35,8 @@ struct LRU(KT, VT)
         {
             if (a[i][0] == key)
             {
-                foreach (j; i + 1 .. a.length)
-                    a[j - 1] = a[j];
-                a.back = tuple(key, value);
+                a = a.remove(i);
+                a ~= tuple(key, value);
                 return;
             }
         }
@@ -48,9 +46,29 @@ struct LRU(KT, VT)
             return;
         }
         // FIXME: use ring buffer and this copy loop won't be necessary
-        foreach (j; 1 .. a.length)
-            a[j - 1] = a[j];
-        a.back = tuple(key, value);
+        a.popFront();
+        a ~= tuple(key, value);
+    }
+}
+
+struct LCG(VT)
+{
+    private VT _seed;
+
+    this(VT seed)
+    {
+        _seed = seed;
+    }
+
+    protected VT next()
+    {
+        _lcg();
+        return _seed;
+    }
+
+    protected void _lcg()
+    {
+        _seed = (A * _seed + C) % M;
     }
 }
 
@@ -70,21 +88,19 @@ void main(string[] argv)
     }
     int hit, missed;
 
-    alias CPP11LCG = LinearCongruentialEngine!(ulong, A, C, M);
-    auto rnd0 = CPP11LCG(0);
-    auto rnd1 = CPP11LCG(1);
+    auto rnd0 = new LCG!ulong(0);
+    auto rnd1 = new LCG!ulong(1);
     auto lru = LRU!(ulong, ulong)(k);
+    l = 10*k;
 
-    l = 10 * k;
+    ulong n0, n1;
     foreach (i; 0 .. n)
     {
-        auto n0 = rnd0.front % l;
-        rnd0.popFront();
-
+        n0 = rnd0.next % l;
+        
         lru.put(n0, n0);
 
-        auto n1 = rnd1.front % l;
-        rnd1.popFront();
+        n1 = rnd1.next % l;
 
         if (!lru.get(n1)[0])
             missed++;
