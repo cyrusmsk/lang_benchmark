@@ -1,0 +1,12 @@
+{
+	"authors": [
+		"Serg"
+	],
+	"copyright": "Copyright © 2022, Serg",
+	"dependencies": {
+		"memutils": "~master"
+	},
+	"description": "D example with memutils",
+	"license": "MIT",
+	"name": "memutis"
+}

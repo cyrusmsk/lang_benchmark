@@ -1,0 +1,15 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/memutis
+memutis.so
+memutis.dylib
+memutis.dll
+memutis.a
+memutis.lib
+memutis-test-*
+*.exe
+*.o
+*.obj
+*.lst

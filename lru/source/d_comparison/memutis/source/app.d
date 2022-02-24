@@ -1,5 +1,5 @@
-import std;
-import ikod.containers.hashmap;
+import memutils.all;
+import std.conv, std.typecons;
 
 immutable ulong A = 1_103_515_245L;
 immutable ulong C = 12_345L;
@@ -169,6 +169,7 @@ struct LCG(VT)
 
 void main(string[] argv)
 {
+    import core.stdc.stdio;
 	int n, k, l;
 	if (argv.length == 1)
     {
