@@ -1,34 +1,15 @@
 # IO benchmark for different languages
 
-2be translated
+The ideo of benchmark generally in comparison of I/O speed performance with stdio/stdout of large amount of data for popular programming languages, usually or potentially used in competitive programming.
 
+There are two synthetic problems:
+* Part A: just read from stdin and out to stdout. Really artificial problem just to compare different techniques of printing.
 
+* Part B: more real problem. T arrays. In each array N_t elements. To solve the problem the program should print all mean values of each array.
 
-Идея бенчмарка изначально состоит в том, чтобы сравнить скорость вывода большого количества информации в stdout для популярных языков, использующихся в спортивном программировании.
-
-
-
-Предлагается решить две синтетические задачи:
-
-* Задача А - просто вывод полученной информации из stdin в stdout. Совсем искусственный вариант, но он, возможно, покажет плюсы и минусы разных подходов I/O.
-
-* Задача B - более похожий на реальную задачу вариант. Необходимо считать числа в двоичном виде, на выход вывести куммулятивную сумму с чередованием знака в обратном порядке (чтобы избежать проблемы переполнения значения).
-  Пример,
-
-  | Input | Comment                                                  | Output |
-  | ----- | -------------------------------------------------------- | ------ |
-  | 1001  | Last element "1"_bin -> "1"_dec (with "+" sign)          | 1      |
-  | 101   | to "1"dec we are adding "10"bin ("2"dec with "-" sign)   | -1     |
-  | 10    | to "-1"dec we are adding "101"bin ("5"dec with "+" sign) | 4      |
-  | 1     | to "4"dec we are adding "1001"bin ("9"dec with "-" sign) | -5     |
-
-  
-
-Для бенчмарка языков и разных подходов предлагается использовать два ключа simple и hack.
-
-Ключ simple подразумевает, что используются стандартные подходы к решению, широко известные и популярные в выбранном языке.
-
-Ключ hack стоит указывать, если для решения задачи были использованы нестандартные\хитрые подходы, нехарактерные для языка.
+For benchmarking of languages and different approaches it is possible to use two tags: "simple" and "hack".
+Tag "simple" means, that used standard approaches widely known and popular.
+Tag "hacK" should be used if the solution based on non-standard and tricky hacks non idiomatic for language.
 
 ## Details
 

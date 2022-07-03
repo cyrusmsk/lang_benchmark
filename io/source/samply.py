@@ -2,9 +2,9 @@ import random
 
 folder = "../sample/"
 file_name = "sample_"
-max_length_row = 50
+max_length_row = 5000000
 min_length_row = 5
-number_of_rows = 1000000
+number_of_rows = 1000
 
 with open(folder + file_name + str(number_of_rows) + '.csv', 'w') as f:
     for i_row in range(number_of_rows):
