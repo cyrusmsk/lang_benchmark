@@ -8,7 +8,7 @@ However maintainer of the repository decides to support in his environment only 
 
 After that another similar web-site was published: https://programming-language-benchmarks.vercel.app/
 
-It has almost the same problems, but with much larger number of supported languages, including **zig**, **crystal**, **nim**, **d** (and many others).
+It has almost the same problems, but with much larger number of supported languages, including **Zig**, **Crystal**, **Nim**, **D** (and many others).
 
 This repository tries to find how **Dlang** is performing on such problems.
 
@@ -43,10 +43,6 @@ For Crystal compilation used:
 
 `crystal build --release {filename}`
 
-For Zig compilation used:
-
-`zig build-exe {filename} -O ReleaseFast`
-
 For LDC compilation used:
 
 `ldc2 -O5 -release {filename}`
@@ -62,7 +58,6 @@ To use this tools just write run like that:
 
 ## TODO
 
-- Java-world code will be added (Java, Scala, Groovy, Kotlin)
 - Compare D implementation with Fork:GC
 - Try to find out why D works so slowly and find the way to boost the performance
 - Submit PR to the initial repo with great D implementation
