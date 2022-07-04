@@ -8,7 +8,7 @@ However maintainer of the repository decides to support in his environment only 
 
 After that another similar web-site was published: https://programming-language-benchmarks.vercel.app/
 
-It has almost the same problems, but with much larger number of supported languages, including **zig**, **crystal**, **nim**, **d**, **v** (and many others).
+It has almost the same problems, but with much larger number of supported languages, including **zig**, **crystal**, **nim**, **d** (and many others).
 
 This repository tries to find how **Dlang** is performing on such problems.
 
@@ -41,11 +41,11 @@ Crystal uses quite simple implementation without any "hacks" with memory-allocat
 
 For Crystal compilation used:
 
-`crystal build -release {filename}`
+`crystal build --release {filename}`
 
-For DMD compilation used:
+For Zig compilation used:
 
-`dmd -release {filename}`
+`zig build-exe {filename} -O ReleaseFast`
 
 For LDC compilation used:
 

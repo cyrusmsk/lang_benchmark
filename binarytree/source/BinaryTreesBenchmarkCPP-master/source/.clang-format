@@ -1,7 +1,0 @@
-BasedOnStyle: LLVM 
-Language: Cpp 
-DerivePointerAlignment: false 
-PointerAlignment: Left 
-SortIncludes: false 
-ColumnLimit: 100 
-ReflowComments: false
