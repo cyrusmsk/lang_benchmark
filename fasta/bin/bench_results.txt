@@ -1,0 +1,21 @@
+Benchmark 1: ./d1 2500000
+  Time (mean ± σ):     218.4 ms ±   9.0 ms    [User: 216.0 ms, System: 2.3 ms]
+  Range (min … max):   207.2 ms … 226.7 ms    13 runs
+ 
+Benchmark 2: ./cr1 2500000
+  Time (mean ± σ):     743.1 ms ±  11.6 ms    [User: 713.9 ms, System: 126.9 ms]
+  Range (min … max):   728.7 ms … 757.9 ms    10 runs
+ 
+Benchmark 3: ./zig1 2500000
+  Time (mean ± σ):     137.0 ms ±  25.3 ms    [User: 133.0 ms, System: 4.0 ms]
+  Range (min … max):    97.1 ms … 178.7 ms    17 runs
+ 
+Benchmark 4: ./d2 2500000
+  Time (mean ± σ):     164.4 ms ±  11.5 ms    [User: 145.2 ms, System: 23.8 ms]
+  Range (min … max):   147.1 ms … 174.4 ms    17 runs
+ 
+Summary
+  './zig1 2500000' ran
+    1.20 ± 0.24 times faster than './d2 2500000'
+    1.59 ± 0.30 times faster than './d1 2500000'
+    5.42 ± 1.00 times faster than './cr1 2500000'
