@@ -1,0 +1,15 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/dataframes
+dataframes.so
+dataframes.dylib
+dataframes.dll
+dataframes.a
+dataframes.lib
+dataframes-test-*
+*.exe
+*.o
+*.obj
+*.lst

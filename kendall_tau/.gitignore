@@ -1,0 +1,15 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/kendall_tau
+kendall_tau.so
+kendall_tau.dylib
+kendall_tau.dll
+kendall_tau.a
+kendall_tau.lib
+kendall_tau-test-*
+*.exe
+*.o
+*.obj
+*.lst

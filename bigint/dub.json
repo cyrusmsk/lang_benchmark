@@ -1,0 +1,13 @@
+{
+	"authors": [
+		"Serg"
+	],
+	"copyright": "Copyright © 2022, Serg",
+	"dependencies": {
+		"mir-algorithm": "~>3.14.11",
+        "gmp-d": "~master"
+	},
+	"description": "A minimal D application.",
+	"license": "MIT",
+	"name": "bigint_d"
+}

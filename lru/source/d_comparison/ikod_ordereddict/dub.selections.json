@@ -1,9 +1,0 @@
-{
-	"fileVersion": 1,
-	"versions": {
-		"automem": "0.6.7",
-		"ikod-containers": "0.0.22",
-		"test_allocator": "0.3.3",
-		"unit-threaded": "2.0.3"
-	}
-}

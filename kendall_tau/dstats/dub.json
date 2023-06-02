@@ -1,0 +1,12 @@
+{
+	"authors": [
+		"Serg"
+	],
+	"copyright": "Copyright © 2022, Serg",
+	"dependencies": {
+		"dstats": "~>1.0.6"
+	},
+	"description": "DStat bench",
+	"license": "MIT",
+	"name": "kendall_tau"
+}
