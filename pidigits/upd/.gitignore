@@ -1,0 +1,16 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/upd
+upd.so
+upd.dylib
+upd.dll
+upd.a
+upd.lib
+upd-test-*
+*.exe
+*.pdb
+*.o
+*.obj
+*.lst
