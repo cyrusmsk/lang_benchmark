@@ -1,0 +1,16 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/hash
+hash.so
+hash.dylib
+hash.dll
+hash.a
+hash.lib
+hash-test-*
+*.exe
+*.pdb
+*.o
+*.obj
+*.lst
