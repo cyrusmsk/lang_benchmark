@@ -1,0 +1,12 @@
+{
+	"authors": [
+		"Sergei Giniatulin"
+	],
+	"copyright": "Copyright © 2025, Sergei Giniatulin",
+	"dependencies": {
+		"simplebench": "~>0.1.2"
+	},
+	"description": "Inverse and regular cube root perf",
+	"license": "proprietary",
+	"name": "cbrt"
+}

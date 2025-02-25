@@ -1,0 +1,16 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/cbrt
+cbrt.so
+cbrt.dylib
+cbrt.dll
+cbrt.a
+cbrt.lib
+cbrt-test-*
+*.exe
+*.pdb
+*.o
+*.obj
+*.lst
