@@ -1,0 +1,16 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/cur
+cur.so
+cur.dylib
+cur.dll
+cur.a
+cur.lib
+cur-test-*
+*.exe
+*.pdb
+*.o
+*.obj
+*.lst

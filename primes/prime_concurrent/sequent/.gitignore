@@ -1,0 +1,16 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/sequent
+sequent.so
+sequent.dylib
+sequent.dll
+sequent.a
+sequent.lib
+sequent-test-*
+*.exe
+*.pdb
+*.o
+*.obj
+*.lst
