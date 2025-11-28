@@ -1,0 +1,12 @@
+{
+	"authors": [
+		"Sergei Giniatulin"
+	],
+	"copyright": "Copyright © 2025, Sergei Giniatulin",
+	"dependencies": {
+		"gmp-d": "0.2.17",
+	},
+	"description": "BigInt to string",
+	"license": "MIT",
+	"name": "d"
+}

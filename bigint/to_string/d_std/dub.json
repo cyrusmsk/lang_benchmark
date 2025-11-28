@@ -1,0 +1,9 @@
+{
+	"authors": [
+		"Sergei Giniatulin"
+	],
+	"copyright": "Copyright © 2025, Sergei Giniatulin",
+	"description": "BigInt to string",
+	"license": "MIT",
+	"name": "d"
+}

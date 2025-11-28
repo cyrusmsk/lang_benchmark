@@ -1,0 +1,12 @@
+{
+	"authors": [
+		"Sergei Giniatulin"
+	],
+	"copyright": "Copyright © 2025, Sergei Giniatulin",
+	"dependencies": {
+		"mir-algorithm": "~>3.22.4"
+	},
+	"description": "BigInt to string",
+	"license": "MIT",
+	"name": "d"
+}
